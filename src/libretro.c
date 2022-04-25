@@ -1139,6 +1139,7 @@ bool retro_serialize(void *data, size_t size)
 
    if (size <= snapshot_size)
    {
+      retro_serialize_size(); // update snapshot_buffer
       memcpy(data, snapshot_buffer, snapshot_size);
       res = true;
    }
